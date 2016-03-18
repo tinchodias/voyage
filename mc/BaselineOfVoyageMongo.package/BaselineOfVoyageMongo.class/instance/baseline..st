@@ -5,14 +5,15 @@ baseline: spec
 	spec for: #common do: [
 		self magritte3: spec.
 		self mongoTalk: spec.
-		
+		self imageWorker: spec.
+				
 		spec
 			package: 'Voyage-Model-Core';
 			package: 'Voyage-Memory-Core' with: [ spec requires: 'Voyage-Model-Core' ];
 			package: 'Voyage-Seaside-Container' with: [ spec requires: 'Voyage-Model-Core' ];
 			package: 'Voyage-Mongo-Core' with: [ spec requires: #('MongoTalk' 'Voyage-Model-Core') ];
 			package: 'Voyage-Mongo-Magritte' with: [ spec requires: #('Magritte3' 'Voyage-Mongo-Core') ];
-			package: 'Voyage-Mongo-Tests';
+			package: 'Voyage-Mongo-Tests' with: [ spec requires: #('Voyage-Mongo-Core' 'ImageWorker') ];
 			package: 'Voyage-Mongo-Utils' with: [ spec requires: #('Voyage-Mongo-Core') ].
 			
 		spec

@@ -4,5 +4,5 @@ mongoTalk: spec
 		spec
 			className: 'ConfigurationOfMongoTalk';
 			file: 'ConfigurationOfMongoTalk';
-			version: #development;
+			version: #stable;
 			repository: 'http://www.smalltalkhub.com/mc/MongoTalkTeam/mongotalk/main' ]

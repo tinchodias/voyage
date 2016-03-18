@@ -1,5 +1,6 @@
 SystemOrganization addCategory: #'Voyage-Mongo-Tests'!
 SystemOrganization addCategory: 'Voyage-Mongo-Tests-Base'!
 SystemOrganization addCategory: 'Voyage-Mongo-Tests-Data'!
+SystemOrganization addCategory: 'Voyage-Mongo-Tests-Extra'!
 SystemOrganization addCategory: 'Voyage-Mongo-Tests-Resources'!
 SystemOrganization addCategory: 'Voyage-Mongo-Tests-Serialization'!
