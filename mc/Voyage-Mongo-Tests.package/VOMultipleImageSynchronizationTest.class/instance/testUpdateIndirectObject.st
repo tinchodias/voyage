@@ -22,7 +22,7 @@ testUpdateIndirectObject
 		do: [ 
 			(self repository selectAll: VOTestOwner) 
 				do: [ :each | each name: 'bar'. self repository save: each ] ]
-		within: 3 seconds 
+		within: 5 seconds 
 		onTimeout: [].
 	50 milliSeconds asDelay wait.
 
