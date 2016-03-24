@@ -1,7 +1,6 @@
 private persistence
 futureWithNewVersion: aFuture do: aBlock
 	| newVersion |
-	Halt once.
 	newVersion := self newVersion.
 	aBlock 
 		value: aFuture futureId 

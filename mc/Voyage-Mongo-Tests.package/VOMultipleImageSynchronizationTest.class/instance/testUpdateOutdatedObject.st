@@ -9,7 +9,6 @@ testUpdateOutdatedObject
 	"FORKED IMAGE: change dog name to bar"
 	ImageWorker 
 		do: [ 
-			Halt disableHaltOnce.
 			dog name: 'bar'. self repository save: dog ]
 		within: 5 seconds 
 		onTimeout: [].
