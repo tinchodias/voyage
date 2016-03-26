@@ -1,7 +1,8 @@
 private persistence
 basicSave: anObject id: idObject
 	| futures |
-	
+	self basicVersion: anObject ifOutdated: [ VOMongoSaveConflictError signal ].
+
 	futures := self serialize: anObject id: idObject.
 	"first object is always root"
 	self futureInsertOrUpdate: futures first id: idObject.

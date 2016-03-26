@@ -1,0 +1,14 @@
+{
+	"category" : "Voyage-Mongo-TestsExtra",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VOMultipleImageSynchronizationTest",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }
