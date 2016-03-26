@@ -18,11 +18,12 @@ testUpdateOutdatedObject
 		do: [ 
 			repository := VOMongoTestResource new setUp repository.
 			dog := repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
+			self assert: dog isNotNil.
 			dog name: 'bar'. 
 			repository save: dog. ]
-		within: 3 seconds 
+		within: 5 seconds 
 		onTimeout: [].
-	3 seconds asDelay wait.
+	5.3 seconds asDelay wait.
 
 	self 
 		should: [ dog name: 'foo'. repository save: dog ]
