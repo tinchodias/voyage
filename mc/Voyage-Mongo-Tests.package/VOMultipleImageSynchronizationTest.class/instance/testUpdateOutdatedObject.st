@@ -1,19 +1,36 @@
 tests
 testUpdateOutdatedObject
-	| dog |
+	| dog dogId repository |
+	
+	"clean up"
+	repository := VOMongoTestResource new setUp repository.
+	repository dropDatabase.
 
 	"set up scenario"
+	50 milliSeconds asDelay wait.
+	repository := VOMongoTestResource new setUp repository.
 	dog := VOTestDog new name: 'carola'; yourself.
-	self repository save: dog.
+	repository save: dog.
+	dogId := repository idOf: dog.
+
+	FileStream stdout << Smalltalk session hash; << '# ImageMaster begin'; cr; flush.
 	
 	"FORKED IMAGE: change dog name to bar"
 	ImageWorker 
 		do: [ 
-			dog name: 'bar'. self repository save: dog ]
+			| workerRepo |
+			FileStream stdout << Smalltalk session hash; << '# ImageWorker begin'; cr; flush.
+			workerRepo := VOMongoTestResource new setUp repository.
+			dog := workerRepo selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
+			dog name: 'bar'. 
+			workerRepo save: dog.
+			FileStream stdout << Smalltalk session hash; << '# ImageWorker end'; cr; flush. ]
 		within: 5 seconds 
 		onTimeout: [].
-	50 milliSeconds asDelay wait.
+	5 seconds asDelay wait.
+
+	FileStream stdout << Smalltalk session hash; << '# ImageMaster end'; cr; flush.
 
 	self 
-		should: [dog name: 'foo'. self repository save: dog ]
+		should: [dog name: 'foo'. repository save: dog ]
 		raise: VOMongoSaveConflictError.

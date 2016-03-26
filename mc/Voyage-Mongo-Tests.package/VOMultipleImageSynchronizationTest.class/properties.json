@@ -10,5 +10,5 @@
 	"name" : "VOMultipleImageSynchronizationTest",
 	"pools" : [
 		 ],
-	"super" : "VOMongoTest",
+	"super" : "TestCase",
 	"type" : "normal" }
