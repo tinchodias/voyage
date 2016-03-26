@@ -14,16 +14,16 @@ testUpdateOutdatedObject
 	dogId := repository idOf: dog.
 
 	"FORKED IMAGE: change dog name to bar"
+	50 milliSeconds asDelay wait.
 	ImageWorker 
 		do: [ 
 			repository := VOMongoTestResource new setUp repository.
 			dog := repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
-			self assert: dog isNotNil.
-			dog name: 'bar'. 
-			repository save: dog. ]
+			dog isNil ifFalse: [
+				dog name: 'bar'. 
+				repository save: dog ] ]
 		within: 5 seconds 
 		onTimeout: [].
-	5.3 seconds asDelay wait.
 
 	self 
 		should: [ dog name: 'foo'. repository save: dog ]
