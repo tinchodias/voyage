@@ -5,4 +5,4 @@ tearDown
 	self repository 
 		removeAll: VOTestPet;
 		removeAll: VOTestPilot.
-	100 milliseconds asDelay wait. "Wait to avoid concurrency conflicts"
+	500 milliseconds asDelay wait. "Wait to avoid concurrency conflicts"
