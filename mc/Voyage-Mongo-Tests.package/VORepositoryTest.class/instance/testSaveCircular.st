@@ -1,6 +1,9 @@
 tests
 testSaveCircular
 	| owner |
+	"ensure clean up"
+	self repository dropDatabase.
+	100 milliseconds asDelay wait.
 	
 	owner := VOTestOwner new
 		name: 'test owner';
