@@ -10,12 +10,10 @@ testUpdateOutdatedObject
 	"FORKED IMAGE: change dog name to bar"
 	ImageWorker 
 		do: [ 
-			| repository |
-			repository := VOMongoTestResource new setUp repository.
-			dog := repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
+			dog := self repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
 			self deny: dog isNil.
 			dog name: 'bar'. 
-			repository save: dog ].
+			self repository save: dog ].
 
 	"The locally updated dog is outdated respect to the db"
 	self 
