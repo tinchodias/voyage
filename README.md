@@ -13,7 +13,7 @@ You can also install it executing this script:
 
 ```Smalltalk
 Metacello new 
-	repository: 'github://estebanlm/voyage/mc';
+	repository: 'github://tinchodias/voyage/mc';
 	baseline: 'VoyageMongo';
 	load.
 ```
