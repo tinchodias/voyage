@@ -1,0 +1,14 @@
+{
+	"category" : "Voyage-Mongo-Magritte-Serialization",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "VOMongoNeighbourSynchronizer",
+	"pools" : [
+		 ],
+	"super" : "VOMongoVisitor",
+	"type" : "normal" }
