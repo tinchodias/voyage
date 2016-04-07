@@ -23,13 +23,13 @@ testUpdateIndirectObject
 				do: [ :each | each name: 'bar'. self repository save: each ] ]
 		within: 5 seconds 
 		onTimeout: [].
-	50 milliSeconds asDelay wait.
 
-	"check owner name is bar"
+	"check owner name is foo (i.e. not current)"
+	50 milliSeconds asDelay wait.
 	dog := self repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
 	self assert: dog owner name equals: 'foo'.
 
 	"SYNCHRONIZE"
-	self repository synchronize: dog.
+	(VOMongoNeighbourSynchronizer repository: self repository) synchronize: dog.
 	self assert: dog owner name equals: 'bar'.
 	
