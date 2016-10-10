@@ -1,0 +1,9 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"setUp" : "MartinDias 10/10/2016 16:47",
+		"tearDown" : "MartinDias 10/10/2016 16:43",
+		"testDefaultBehavior" : "MartinDias 10/10/2016 18:49",
+		"testEnabled" : "MartinDias 10/10/2016 18:50",
+		"waitForWriteOperation" : "MartinDias 10/10/2016 16:55" } }
