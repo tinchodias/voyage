@@ -1,5 +1,5 @@
 tests
-testDefaultBehavior
+dogAfterExternalUpdate
 
 	| dog owner dogId |
 	"set up scenario"
@@ -14,7 +14,7 @@ testDefaultBehavior
 
 	"check owner name is foo"
 	self waitForWriteOperation.
-	dog := repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
+	dog := repository selectOne: VOTestDog where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> dogId).
 	self assert: dog owner name equals: 'foo'.
 	
 	"FORKED IMAGE: change owner name to bar"
@@ -27,9 +27,5 @@ testDefaultBehavior
 
 	"check owner name is foo (i.e. not current)"
 	self waitForWriteOperation.
-	dog := repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
-	self assert: dog owner name equals: 'foo'.
-
-	"SYNCHRONIZE"
-	"(VOMongoNeighbourSynchronizer repository: repository) synchronize: dog.
-	self assert: dog owner name equals: 'bar'."
+	dog := repository selectOne: VOTestDog where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> dogId).
+	^ dog

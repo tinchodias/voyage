@@ -5,5 +5,5 @@ visitToOneDescription: aDescription
 
 	element ifNil: [ ^self ].
 	
-	self basicSyncronizeNeighbour: element description: aDescription.
+	self value: element
 

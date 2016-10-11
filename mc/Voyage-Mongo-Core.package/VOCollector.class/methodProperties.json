@@ -1,0 +1,16 @@
+{
+	"class" : {
+		"allRootsFrom:in:" : "MartinDias 10/11/2016 00:46" },
+	"instance" : {
+		"addToResultsIfSatisfy:" : "MartinDias 10/11/2016 00:41",
+		"block" : "MartinDias 10/11/2016 00:40",
+		"block:" : "MartinDias 10/11/2016 00:40",
+		"descriptionFor:" : "MartinDias 10/11/2016 01:28",
+		"initialize" : "MartinDias 10/11/2016 00:40",
+		"results" : "MartinDias 10/11/2016 00:36",
+		"value:" : "MartinDias 10/11/2016 00:36",
+		"value:description:" : "MartinDias 10/11/2016 00:41",
+		"visitIDMirrorDescription:" : "MartinDias 10/11/2016 00:10",
+		"visitShadowDescription:" : "MartinDias 10/11/2016 00:10",
+		"visitToManyDescription:" : "MartinDias 10/11/2016 00:24",
+		"visitToOneDescription:" : "MartinDias 10/11/2016 00:23" } }

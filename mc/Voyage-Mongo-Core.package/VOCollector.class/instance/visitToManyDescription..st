@@ -5,4 +5,4 @@ visitToManyDescription: aDescription
 	
 	elements ifNil: [ ^self ].
 
-	elements do: [ :element | self basicSyncronizeNeighbour: element description: aDescription ].
+	elements do: [ :element | self value: element ].

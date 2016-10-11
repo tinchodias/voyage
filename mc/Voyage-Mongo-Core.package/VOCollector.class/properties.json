@@ -1,13 +1,14 @@
 {
-	"category" : "Voyage-Mongo-Core-Serialization",
+	"category" : "Voyage-Mongo-Core-Utilities",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
-	"name" : "VOMongoNeighbourSynchronizer",
+		"results",
+		"block" ],
+	"name" : "VOCollector",
 	"pools" : [
 		 ],
 	"super" : "VOJSONVisitor",
