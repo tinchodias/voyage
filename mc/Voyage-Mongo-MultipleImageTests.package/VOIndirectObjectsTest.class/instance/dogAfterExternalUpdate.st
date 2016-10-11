@@ -14,8 +14,8 @@ dogAfterExternalUpdate
 
 	"check owner name is foo"
 	self waitForWriteOperation.
-	dog := repository selectOne: VOTestDog where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> dogId).
-	self assert: dog owner name equals: 'foo'.
+	"dog := repository selectOne: VOTestDog where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> dogId).
+	self assert: dog owner name equals: 'foo'."
 	
 	"FORKED IMAGE: change owner name to bar"
 	ImageWorker 
@@ -27,5 +27,6 @@ dogAfterExternalUpdate
 
 	"check owner name is foo (i.e. not current)"
 	self waitForWriteOperation.
-	dog := repository selectOne: VOTestDog where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> dogId).
-	^ dog
+	
+	'* select dog whose owner externally changed it''s name *' logCr.
+	^ repository selectOne: VOTestDog where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> dogId).

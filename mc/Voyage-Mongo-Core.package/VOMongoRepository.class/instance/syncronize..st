@@ -2,8 +2,10 @@ persistence
 syncronize: anObject
 
 	| objectClass id json |
+	resolver debugLog: 'sync a ', anObject class asString.
+
 	anObject isTypePersistent ifFalse: [ ^anObject ].
-	
+
 	objectClass := anObject class.
 	id := self keyOf: anObject.
 	json := resolver
@@ -12,4 +14,4 @@ syncronize: anObject
 		
 	^json isEmptyOrNil 
 		ifTrue: [ anObject ]
-		ifFalse: [ resolver retrieveObjectOf: objectClass json: json eager: true ]
+		ifFalse: [ resolver retrieveObjectOf: objectClass json: json eager: false ]
