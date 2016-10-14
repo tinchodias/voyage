@@ -1,9 +1,7 @@
 visiting
 visitToOneDescription: aDescription
-	| element |
-	element := aDescription accessor read: self object.
-
-	element ifNil: [ ^self ].
+	| reference |
+	reference := self readAt: aDescription ifAbsent: [ ^self ].
 	
-	self value: element
+	self value: reference
 

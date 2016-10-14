@@ -1,3 +1,3 @@
 visiting
 visitIDMirrorDescription: aDescription
-	self notYetImplemented
+	"Do nothing in this kind of description"

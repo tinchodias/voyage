@@ -1,3 +1,3 @@
 visiting
 visitShadowDescription: aDescription
-	self notYetImplemented
+	"Do not continue when it's shadow."

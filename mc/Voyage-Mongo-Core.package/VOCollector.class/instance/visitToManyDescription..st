@@ -1,8 +1,6 @@
 visiting
 visitToManyDescription: aDescription
-	| elements |
-	elements := aDescription accessor read: self object.
-	
-	elements ifNil: [ ^self ].
+	| references |
+	references := self readAt: aDescription ifAbsent: [ ^self ].
 
-	elements do: [ :element | self value: element ].
+	references do: [ :each | self value: each ].
