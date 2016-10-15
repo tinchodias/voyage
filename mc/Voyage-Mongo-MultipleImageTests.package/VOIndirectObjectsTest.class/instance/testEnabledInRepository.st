@@ -1,10 +1,10 @@
 tests
-testEnabled
+testEnabledInRepository
 
 	| dog |
 	repository
 		debug: true;
-		ensuringCurrentOnQueries: true.
+		ensuringCurrentReferencesOnQueries: true.
 	
 	dog := self dogAfterExternalUpdate.
 

@@ -2,9 +2,11 @@
 	"class" : {
 		 },
 	"instance" : {
-		"dogAfterExternalUpdate" : "MartinDias 10/11/2016 19:06",
+		"dogAfterExternalUpdate" : "MartinDias 10/15/2016 16:23",
+		"dogAfterExternalUpdateWith:" : "MartinDias 10/15/2016 16:23",
 		"setUp" : "MartinDias 10/10/2016 16:47",
 		"tearDown" : "MartinDias 10/10/2016 16:43",
-		"testDisabled" : "MartinDias 10/14/2016 21:08",
-		"testEnabled" : "MartinDias 10/14/2016 21:07",
+		"testDisabled" : "MartinDias 10/15/2016 16:25",
+		"testEnabledInClass" : "MartinDias 10/15/2016 16:25",
+		"testEnabledInRepository" : "MartinDias 10/15/2016 16:25",
 		"waitForWriteOperation" : "MartinDias 10/10/2016 16:55" } }

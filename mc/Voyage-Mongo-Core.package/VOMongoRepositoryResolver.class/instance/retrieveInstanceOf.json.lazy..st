@@ -29,7 +29,7 @@ retrieveInstanceOf: aClass json: jsonDictionary lazy: isLazy
 						objectClass: aClass
 						id: (jsonDictionary at: VOMongoJSONSerializer fieldRootId) ] ]
 		ifFalse: [
-			(cachedObject isNotNil and: [ repository isEnsuringCurrentOnQueries ]) ifTrue: [ 
+			(cachedObject isNotNil and: [ repository mustEnsureCurrentReferecesOnQueriesOf: aClass ]) ifTrue: [ 
 				"Referenced roots may need to sync"
 				| roots syncRoots |
 				self debugLog: '--> looking for outdated referenced objects'.

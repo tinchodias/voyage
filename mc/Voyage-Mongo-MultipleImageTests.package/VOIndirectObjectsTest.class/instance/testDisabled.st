@@ -4,7 +4,7 @@ testDisabled
 	| dog |
 	repository
 		debug: true;
-		ensuringCurrentOnQueries: false.
+		ensuringCurrentReferencesOnQueries: false.
 
 	dog := self dogAfterExternalUpdate.
 
