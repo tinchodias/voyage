@@ -11,7 +11,5 @@ syncronize: anObject
 	json := resolver
 		basicRawSelectOne: objectClass 
 		where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> id).
-		
-	^json isEmptyOrNil 
-		ifTrue: [ anObject ]
-		ifFalse: [ resolver retrieveObjectOf: objectClass json: json eager: false ]
+
+	^resolver retrieveInstanceOf: objectClass json: json lazy: true

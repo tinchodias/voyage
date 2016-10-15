@@ -1,8 +1,12 @@
 tests
 testDisabled
 
+	| dog |
 	repository
 		debug: true;
 		ensuringCurrentOnQueries: false.
-	
-	self assert: self dogAfterExternalUpdate owner name equals: 'foo'.
+
+	dog := self dogAfterExternalUpdate.
+
+	self assert: dog owner class equals: VOTestOwner.
+	self assert: dog owner name equals: 'foo'.
