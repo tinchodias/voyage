@@ -33,8 +33,8 @@ retrieveInstanceOf: aClass json: jsonDictionary lazy: isLazy
 				"Referenced roots may need to sync"
 				| roots syncRoots |
 				self debugLog: '--> looking for outdated referenced objects'.
-				roots := VOCollector allRootsFrom: cachedObject in: repository.
-				roots := roots asArray reject: [ :each | each == cachedObject]. "TODO: directly construct results without it"
+				roots := VOCollector allOtherRootsFrom: cachedObject in: repository.
+				roots := roots asArray.
 				syncRoots := roots collect: [ :root | repository syncronize: root ].
 				syncRoots ifNotEmpty: [
 					self debugLog: '----> becoming ', (roots collect: [:each | each class asString]) asString.
