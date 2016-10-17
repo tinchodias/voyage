@@ -2,7 +2,7 @@ tests
 testEnabledInClassWithLazySynchronize
 
 	repository
-		ensuringCurrentReferencesOnQueries: true;
+		ensuringCurrentReferencesOnQueries: false;
 		lazySynchronize: true.
 	
 	self setUpDogWithOutdatedReferenceOf: VOTestDogEnsuringCurrentReferencesOnQueries.

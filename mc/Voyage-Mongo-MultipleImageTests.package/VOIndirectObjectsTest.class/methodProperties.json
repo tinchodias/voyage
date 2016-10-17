@@ -3,12 +3,11 @@
 		 },
 	"instance" : {
 		"setUp" : "MartinDias 10/10/2016 16:47",
-		"setUpDogWithOutdatedReference" : "MartinDias 10/17/2016 18:24",
 		"setUpDogWithOutdatedReferenceOf:" : "MartinDias 10/17/2016 18:24",
 		"tearDown" : "MartinDias 10/10/2016 16:43",
 		"testDisabled" : "MartinDias 10/17/2016 18:26",
-		"testEnabledInClassWithLazySynchronize" : "MartinDias 10/17/2016 18:24",
-		"testEnabledInClassWithoutLazySynchronize" : "MartinDias 10/17/2016 18:24",
+		"testEnabledInClassWithLazySynchronize" : "MartinDias 10/17/2016 18:29",
+		"testEnabledInClassWithoutLazySynchronize" : "MartinDias 10/17/2016 18:29",
 		"testEnabledInRepositoryWithLazySynchronize" : "MartinDias 10/17/2016 18:25",
 		"testEnabledInRepositoryWithoutLazySynchronize" : "MartinDias 10/17/2016 18:25",
 		"waitForWriteOperation" : "MartinDias 10/10/2016 16:55" } }
