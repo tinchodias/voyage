@@ -1,7 +1,7 @@
 running
-dogAfterExternalUpdateWith: dogClass
+setUpDogWithOutdatedReferenceOf: dogClass
 
-	| dog owner dogId |
+	| owner dogId |
 	"create dog with owner named foo"
 	dog := dogClass new name: 'cometa'; yourself.
 	owner := 
@@ -18,8 +18,7 @@ dogAfterExternalUpdateWith: dogClass
 		(repository selectAll: VOTestOwner) 
 			do: [ :each | each name: 'bar'. repository save: each ] ].
 	
-	'* select dog whose owner externally changed it''s name *' logCr.
 	self waitForWriteOperation.
-	^ repository 
+	dog := repository 
 		selectOne: dogClass 
 		where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> dogId).

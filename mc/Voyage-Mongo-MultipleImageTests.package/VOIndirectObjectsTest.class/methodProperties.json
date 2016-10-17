@@ -2,13 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
-		"dogAfterExternalUpdate" : "MartinDias 10/15/2016 16:23",
-		"dogAfterExternalUpdateWith:" : "MartinDias 10/17/2016 14:04",
 		"setUp" : "MartinDias 10/10/2016 16:47",
+		"setUpDogWithOutdatedReference" : "MartinDias 10/17/2016 18:24",
+		"setUpDogWithOutdatedReferenceOf:" : "MartinDias 10/17/2016 18:24",
 		"tearDown" : "MartinDias 10/10/2016 16:43",
-		"testDisabled" : "MartinDias 10/17/2016 17:38",
-		"testEnabledInClass" : "MartinDias 10/17/2016 17:41",
-		"testEnabledInClass:" : "MartinDias 10/17/2016 17:41",
-		"testEnabledInRepository" : "MartinDias 10/17/2016 17:40",
-		"testEnabledInRepository:" : "MartinDias 10/17/2016 17:39",
+		"testDisabled" : "MartinDias 10/17/2016 18:26",
+		"testEnabledInClassWithLazySynchronize" : "MartinDias 10/17/2016 18:24",
+		"testEnabledInClassWithoutLazySynchronize" : "MartinDias 10/17/2016 18:24",
+		"testEnabledInRepositoryWithLazySynchronize" : "MartinDias 10/17/2016 18:25",
+		"testEnabledInRepositoryWithoutLazySynchronize" : "MartinDias 10/17/2016 18:25",
 		"waitForWriteOperation" : "MartinDias 10/10/2016 16:55" } }

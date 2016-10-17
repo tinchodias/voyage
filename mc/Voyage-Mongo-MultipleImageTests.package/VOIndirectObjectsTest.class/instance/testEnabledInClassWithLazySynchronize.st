@@ -1,12 +1,11 @@
 tests
-testEnabledInRepository: isLazySynchronize
+testEnabledInClassWithLazySynchronize
 
-	| dog |
 	repository
 		ensuringCurrentReferencesOnQueries: true;
-		lazySynchronize: isLazySynchronize.
+		lazySynchronize: true.
 	
-	dog := self dogAfterExternalUpdate.
+	self setUpDogWithOutdatedReferenceOf: VOTestDogEnsuringCurrentReferencesOnQueries.
 
 	self assert: dog owner class equals: VOMongoLazyProxy.
 	self assert: dog owner name equals: 'bar'.
