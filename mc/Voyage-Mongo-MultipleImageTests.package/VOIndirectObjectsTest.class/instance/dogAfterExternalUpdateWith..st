@@ -18,12 +18,9 @@ dogAfterExternalUpdateWith: dogClass
 	self assert: dog owner name equals: 'foo'."
 	
 	"FORKED IMAGE: change owner name to bar"
-	ImageWorker 
-		do: [ 
-			(repository selectAll: VOTestOwner) 
-				do: [ :each | each name: 'bar'. repository save: each ] ]
-		within: 5 seconds 
-		onTimeout: [].
+	self forkImageAndDo: [ 
+		(repository selectAll: VOTestOwner) 
+			do: [ :each | each name: 'bar'. repository save: each ] ].
 
 	"check owner name is foo (i.e. not current)"
 	self waitForWriteOperation.

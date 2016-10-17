@@ -6,7 +6,7 @@ assertSaveRaisesError
 	dogId := repository idOf: dog.
 
 	"FORKED IMAGE: change dog name to bar"
-	ImageWorker do: [
+	self forkImageAndDo: [
 		dog := repository selectOne: VOTestDog where: (Dictionary with: '_id' -> dogId).
 		self deny: dog isNil.
 		dog name: 'foo'. 
