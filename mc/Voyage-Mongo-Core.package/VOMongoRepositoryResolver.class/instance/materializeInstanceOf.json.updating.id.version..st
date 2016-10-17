@@ -3,8 +3,6 @@ materializeInstanceOf: aClass json: jsonDictionary updating: cachedObject id: id
 	"Note any referenced root will be up-to-date because of the materializer"
 
 	| result |
-	self debugLog: '--> eager object'.
-
 	cachedObject 
 		ifNotNil: [ result := cachedObject ]
 		ifNil: [ 

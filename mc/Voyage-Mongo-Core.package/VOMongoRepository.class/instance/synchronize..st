@@ -1,9 +1,7 @@
 persistence
-syncronize: anObject
+synchronize: anObject
 
 	| objectClass id json |
-	resolver debugLog: 'sync a ', anObject class asString.
-
 	anObject isTypePersistent ifFalse: [ ^anObject ].
 
 	objectClass := anObject class.

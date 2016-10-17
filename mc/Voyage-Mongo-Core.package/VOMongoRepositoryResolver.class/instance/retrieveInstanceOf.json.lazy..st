@@ -2,8 +2,6 @@ private retrieving
 retrieveInstanceOf: aClass json: jsonDictionary lazy: isLazy
 
 	| id cachedVersion jsonVersion cachedObject result | 
-	self debugLog: 'retrieving json ', jsonDictionary asString.	
-
 	id := jsonDictionary at: VOMongoJSONSerializer fieldRootId.
 	cachedObject := self cacheAt: id.
 	cachedVersion := self cacheVersionAt: id.
@@ -18,6 +16,8 @@ retrieveInstanceOf: aClass json: jsonDictionary lazy: isLazy
 				ifTrue: [ 
 					self proxyfyInstanceOf: aClass json: jsonDictionary id: id ] ]
 		ifFalse: [
-			self synchronizeInstanceOf: aClass json: jsonDictionary updating: cachedObject ].
+			"Cached object is up-to-date, but referenced roots may need to sync"
+			(repository mustEnsureCurrentReferecesOnQueriesOf: aClass) ifTrue: [ 
+				self synchronizeInstanceOf: aClass json: jsonDictionary updating: cachedObject ] ].
 		
 	^result
