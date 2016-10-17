@@ -1,4 +1,4 @@
-tests
+private
 waitForWriteOperation
 	"TODO: this is duplicated in VOMongoTest"
 	

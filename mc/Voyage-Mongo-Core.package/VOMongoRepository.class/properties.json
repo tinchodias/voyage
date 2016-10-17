@@ -21,7 +21,8 @@
 		"forceEager",
 		"wireProtocolEnabled",
 		"ensuringCurrentOnSave",
-		"ensuringCurrentReferencesOnQueries" ],
+		"ensuringCurrentReferencesOnQueries",
+		"lazySynchronize" ],
 	"name" : "VOMongoRepository",
 	"pools" : [
 		 ],

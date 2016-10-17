@@ -10,4 +10,4 @@ synchronize: anObject
 		basicRawSelectOne: objectClass 
 		where: (Dictionary with: VOMongoJSONSerializer fieldRootId -> id).
 
-	^resolver retrieveInstanceOf: objectClass json: json lazy: true
+	^resolver retrieveInstanceOf: objectClass json: json lazy: self isLazySynchronize
