@@ -1,3 +1,3 @@
-persistence
+testing
 isLazySynchronize
 	^ lazySynchronize

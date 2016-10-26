@@ -3,9 +3,6 @@ doesNotUnderstand: aMessage
 	| realObject |
 	
 	realObject := self obtainRealObject.
-	
-	('de-proxyfy ', realObject asString, ' due to ', aMessage asString) logCr.
-	
 	realObject ifNil: [
 		(repository descriptionBuilder for: objectClass) isAllowMissingContent
 			ifTrue: [ 

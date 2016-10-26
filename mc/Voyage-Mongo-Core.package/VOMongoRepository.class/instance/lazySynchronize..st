@@ -1,3 +1,3 @@
-persistence
+accessing
 lazySynchronize: aBoolean
 	lazySynchronize := aBoolean
